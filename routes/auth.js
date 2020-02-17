@@ -9,6 +9,11 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 
+
+router.get("/films", (req, res, next) => {
+  res.render("auth/films")
+});
+
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
@@ -26,19 +31,19 @@ router.get("/signup", (req, res, next) => {
 
 router.post("/signup", (req, res, next) => {
 
-  function token (){
+  /* function token (){
     const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let token = '';
     for (let i = 0; i < 25; i++) {
       token += characters[Math.floor(Math.random() * characters.length)];
     }
     return token;
-  };
+  }; */
   
 
 
   const email = req.body.email;
-  const confirmationCode = token();
+  //const confirmationCode = token();
 
 
   const username = req.body.username;
@@ -61,23 +66,23 @@ router.post("/signup", (req, res, next) => {
       username,
       password: hashPass,
       email,
-      confirmationCode    
+      //confirmationCode    
     });
 
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: 'ironhacker0102@gmail.com',
-        pass: 'Ir0nhacker' 
+        user: `${process.env.EMAIL}`,
+        pass: `${process.env.EPASSWORD}` 
       }
     });
 
     transporter.sendMail({
-      from: '<ironhacker0102@gmail.com>',
+      from: `${process.env.EMAIL}`,
       to: `<${email}>`, 
       subject: 'Awesome Subject', 
       text: 'Awesome Message',
-      html: `<b>Awesome Message http://localhost:3000/auth/confirm/${confirmationCode}</b>`
+      html: `<b>Welcome to trail-flix</b>` //http://localhost:3000/auth/confirm/${confirmationCode}
     })
     .then(info => console.log(info))
     .catch(error => console.log(error))
@@ -87,7 +92,7 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
       .then(() => {
-        res.redirect("/");
+        res.redirect("auth/films");
       })
       .catch(err => {
         res.render("auth/signup", { message: "Something went wrong" });
@@ -95,12 +100,12 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.get("/confirm/:confirmCode", (req, res) => {
+/* router.get("/confirm/:confirmCode", (req, res) => {
   User.findOneAndUpdate( {confirmationCode: req.params.confirmCode},{ status: 'Active'})
   .then(updatedUser => {
     res.render('auth/confirmation', {updatedUser});
   });
-});
+}); */
 
 router.get("/logout", (req, res) => {
   req.logout();
