@@ -1,12 +1,16 @@
-<h1>you are on Movies page</h1>
+<h1>ÚLTIMMOS ESTRENOS</h1>
 
-<div class="movies-page">
-  {{#each jsonMovies}}
+
+
+<div id="estrenos">
+
+  {{#each movies}}
 
   <h2>{{title}}</h2>
-  <!-- <img src={{backdrop_path}} alt=""> -->
-
+  <img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli">
 
   {{/each}}
 
 </div>
+
+
