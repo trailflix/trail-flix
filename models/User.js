@@ -1,21 +1,58 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+require("dotenv").config();
+const mongoose = require("mongoose");
+const User = require("../models/User");
 
-const userSchema = new Schema({
-  username: String,
-  password: String,
-  status: {type: String, enum: ['Pending Confirmation', 'Active'], default: 'Pending Confirmation'},
+const user = [
+  {
+    username: "Luis",
+    password: "123",
+    email: "luis@gmail.com"
+  },
 
-}, {
-  confirmationCode: {type: String, unique: true},
-  email: String,
+  {
+    username: "Pepe",
+    password: "123",
+    email: "pepe@gmail.com"
+  },
 
-},{
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+  {
+    username: "Erenesto",
+    password: "123",
+    email: "erenesto@gmail.com"
+  },
+
+  {
+    username: "Maribel",
+    password: "123",
+    email: "maribel@gmail.com"
+  },
+
+  {
+    username: "Jasmine",
+    password: "123",
+    email: "jasmine@gmail.com"
   }
-});
+];
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+mongoose
+  .connect("mongodb://localhost/trail-flix", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(x => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+    User.deleteMany()
+      .then(() => {
+        return User.create(user);
+      })
+      .then(() => {
+        console.log("succesfully added all the data");
+        mongoose.connection.close();
+        process.exit(0);
+      });
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
+  });
