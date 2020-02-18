@@ -14,8 +14,8 @@ router.get('/movies', (req, res, next) => {
       let movies = response.data.results
       res.render('movies', { movies })
     })
-    
-    
+
+});
 
 // router.get('/movies', (req,res,next) =>{
 
@@ -29,4 +29,4 @@ router.get('/movies', (req, res, next) => {
 // })
 
 
-module.exports = router;
+module.exports = router
