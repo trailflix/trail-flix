@@ -6,8 +6,6 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-module.exports = router;
-
 
 router.get('/movies', (req,res,next) =>{
 
@@ -19,3 +17,5 @@ router.get('/movies', (req,res,next) =>{
 
 
 })
+
+module.exports = router;
