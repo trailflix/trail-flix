@@ -2,17 +2,18 @@
 
 
 
-<div id="estrenos">
+<div class="columns">
 
   {{#each movies}}
+
+  <div class="column is-one-fifth" >
+
 
   <h2>{{title}}</h2>
 
   <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli"></a>
  
-
   {{/each}}
-
 </div>
 
 
