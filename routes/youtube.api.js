@@ -20,8 +20,7 @@ router.get('/', (req,res,next) =>{
   youtubeSearch('sonic trailer', opts, function(err, results) {
     if(err) return console.log(err);
     let video = results[0]
-    console.log("ESTE ES EL VIDEO")
-    console.log(video)
+
     res.render("youtubetest",video)
   })
 
