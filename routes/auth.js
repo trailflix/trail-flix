@@ -20,9 +20,6 @@ router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("auth/profile", { user: req.user });
 });
 
-// router.get('/movies', ensureAuthenticated, (req, res) => {
-//   res.render('auth/movies', {user: req.user});
-// });
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
