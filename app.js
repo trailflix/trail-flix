@@ -83,8 +83,8 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
-const movies = require('./routes/movies.route');
-app.use('/movies', movies);
+const youtube = require('./routes/youtube.api');
+app.use('/yt', youtube);
       
 
 module.exports = app;
