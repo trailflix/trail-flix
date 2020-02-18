@@ -7,19 +7,26 @@ const nodemailer = require('nodemailer');
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const ensureLogin = require("connect-ensure-login");
 
 
 
-router.get("/films", (req, res, next) => {
-  res.render("auth/films")
+router.get("/movies", (req, res, next) => {
+  res.render("movies")
 });
+
 
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 
+router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {
+  res.render("auth/profile", { user: req.user });
+});
+
+
 router.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/auth/profile",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
@@ -106,6 +113,7 @@ router.post("/signup", (req, res, next) => {
     res.render('auth/confirmation', {updatedUser});
   });
 }); */
+
 
 router.get("/logout", (req, res) => {
   req.logout();

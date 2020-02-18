@@ -1,4 +1,4 @@
-<h1>ÚLTIMMOS ESTRENOS</h1>
+<h1>ÚLTIMOS ESTRENOS</h1>
 
 
 
@@ -7,7 +7,9 @@
   {{#each movies}}
 
   <h2>{{title}}</h2>
-  <img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli">
+
+  <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli"></a>
+ 
 
   {{/each}}
 
