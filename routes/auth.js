@@ -15,6 +15,7 @@ router.get("/movies", (req, res, next) => {
   res.render("movies")
 });
 
+
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
