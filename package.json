@@ -11,6 +11,8 @@
     "axios": "^0.19.2",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
+    "bulma": "^0.8.0",
+    "bulma-start": "0.0.3",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.1",
