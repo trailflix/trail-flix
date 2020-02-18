@@ -40,7 +40,7 @@ const user = [
 ];
 
 mongoose
-  .connect("mongodb://localhost/trail-flix", {
+  .connect(`${process.env.DBURL}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
