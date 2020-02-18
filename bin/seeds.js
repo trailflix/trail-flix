@@ -40,7 +40,7 @@ const user = [
 ];
 
 mongoose
-  .connect(`${dbUrl}`, {
+  .connect(`${process.env.DBURL}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
