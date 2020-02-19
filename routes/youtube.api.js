@@ -24,12 +24,17 @@ router.get('/', (req,res,next) =>{
     res.render("youtubetest",video)
   })
 
-
-
     // res.render('youtubetest')
 
-
-
 })
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
