@@ -20,9 +20,6 @@ router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("auth/profile", { user: req.user });
 });
 
-// router.get('/movies', ensureAuthenticated, (req, res) => {
-//   res.render('auth/movies', {user: req.user});
-// });
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
@@ -34,7 +31,7 @@ function ensureAuthenticated(req, res, next) {
 
 router.get("/movies", ensureAuthenticated, (req, res) => {
 
-  axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-02-15&year=2020')
+  axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-07-15&year=2020')
   .then(response =>{
    let movies = response.data.results
    res.render("auth/movies",{movies},)
@@ -116,7 +113,8 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
       .then(() => {
-        res.redirect("auth/movies");
+
+        res.redirect("/auth/movies");
       })
       .catch(err => {
         res.render("auth/signup", { message: "Something went wrong" });

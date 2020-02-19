@@ -1,25 +1,48 @@
 const express = require('express');
-const router = express.Router();
+const router  = express.Router();
 const axios = require('axios')
+const youtubeSearch = require('youtube-search')
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+router.get('/movie/:id', function (req, res) {
 
-<<<<<<< HEAD
+  axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=c9f84c134bb1d07c82ecf21fbb8de863`)
+  .then(response => {
+    var opts={
+      maxResults:1,
+      key: `${process.env.YT_API}`
+    };
+    let movie = response.data
 
-=======
-router.get('/movies', (req, res, next) => {
 
-  axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-02-15&year=2020')
-    .then(response => {
-      let movies = response.data.results
-      res.render('movies', { movies })
+    youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
+      if(err) return console.log(err);
+      let video = results[0]
+      res.render("youtubetest",video)
     })
     
-    
->>>>>>> 4c81e2f98f20c3a506e58f444335eb9b2258d6b7
+  })
+
+});
+
+
+
+
+
+
+
+// router.get('/movies', (req, res, next) => {
+
+//   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-02-15&year=2020')
+//     .then(response => {
+//       let movies = response.data.results
+//       res.render('movies', { movies })
+//     })
+
+// });
 
 // router.get('/movies', (req,res,next) =>{
 
@@ -32,14 +55,5 @@ router.get('/movies', (req, res, next) => {
 
 // })
 
-<<<<<<< HEAD
-function generateUrl(path){
-  const url = `https://api.themoviedb.org/3${path}api_key=c9f84c134bb1d07c82ecf21fbb8de863`
 
-  return url;
-}
-=======
-
-
->>>>>>> 4c81e2f98f20c3a506e58f444335eb9b2258d6b7
-module.exports = router;
+module.exports = router
