@@ -2,19 +2,22 @@
 // deep space sparkle (azul oscuro): #3D5A6C
 // maximum green yellow (pistacho): #CBEF43
 
+* {
+	font-family: 'Lacquer', sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
 
 body {
-  padding: 50px;
+	padding-top: 150px;
+	padding-left: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   // Needs latest Compass, add '@import "compass"' to your scss
 // Permalink - use to edit and share this gradient:
 // https://colorzilla.com/gradient-editor/#a90329+0,8f0222+44,6d0019+100;Brown+Red+3D
 
+	background-color:black;
 }
 
-a {
-  color: #00B7FF;
-}
 
 .form-container{
 	width:450px;
@@ -33,4 +36,113 @@ a {
 	background: #F8F8F8;
 	border-radius: 6px;
 	margin-bottom: 15px;
+}
+
+#nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	position: fixed;
+	width: 100vw;
+	height: 8rem;
+	top: 0;
+  left: 0;
+
+	background-color: rgba(202, 239, 67, 0.096);
+	box-shadow: 4px 0px 46px -9px rgba(255, 255, 255, 0.527);
+
+	font-size: 20px;
+
+	
+	
+	a {
+		color: #983628;
+		font-weight: bold;
+	}
+
+	& img {
+		margin-left: -60px;
+
+		width: 280px;
+		height: 80px;
+
+		border-radius: 10px;
+		box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+
+		transition: 0.3s;
+
+		&:hover {
+			box-shadow: 4px 0px 46px -4px rgba(0,0,0,0.75);
+		}
+	}
+
+	& .nav-btns {
+		text-decoration: none;
+
+		border-radius: 10px;
+		box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+
+		transition: 0.3s;
+		
+		padding: 15px 30px;
+		background-color: #CBEF43;
+
+		&:hover {
+			box-shadow: 4px 0px 46px -4px rgba(0,0,0,0.75);
+		}
+
+		&.logout {
+			background-color: rgba(102, 121, 33, 0.726);
+		}
+	}
+	
+}
+
+#movies {
+
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+	
+	& h2 {
+		color: #CBEF43;
+		display: block;
+		min-height: 50px;
+		text-align: center;
+	}
+
+	& div img{
+		height: 400px;
+		width: 250px;
+
+		border-radius: 5px;
+		justify-self: center;
+		padding: 5px;
+
+		transition: 0.3s;
+	}
+
+	& div {
+		width: 24%;
+		margin:0.5% 0;
+		margin-bottom: 40px;
+
+		border-radius: 5px;
+		box-shadow: 1px 0px 17px -10px rgba(255, 255, 255, 0.527);
+
+		
+		align-content: center;
+
+		transition: 0.3s;
+
+		&:hover {
+			box-shadow: 1px 0px 20px -5px rgba(255, 255, 255, 0.527);
+		
+		}
+		
+	}
+	
 }
