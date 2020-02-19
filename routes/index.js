@@ -44,7 +44,7 @@ router.get('/movie/:id', function (req, res) {
 
 
 router.post("/movies/addMovie", (req, res) => {
-  let movie = req.body.movie.id;
+  let movie = favMovie;
   console.log(movie)
   User.findByIdAndUpdate(req.user._id, {$push: {favlist: movie}})
   .then(()=> res.json({ok:true}))

@@ -26,9 +26,14 @@ router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render("auth/profile", { user: req.user });
 });
 
-router.get("/profile/favlist", ensureLogin.ensureLoggedIn(), (req, res) => {
-  res.render("auth/favlist", { user: req.user });
-});
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('login')
+  }
+}
 
 router.get("/movies", ensureAuthenticated, (req, res) => {
   axios
