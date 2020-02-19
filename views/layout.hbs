@@ -6,17 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lacquer|Roboto&display=swap" rel="stylesheet">
+  
+  {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"> --}}
 </head>
 <body>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/auth/login">Login</a>
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/logout">Logout</a>
-
-    <a href="movies">Movies</a>
+  <nav id="nav-bar">
+    <a href="/"><img src="../images/trail-flix-logo.jpg" alt="trail-flix-logo"></a>
+    <a href="/auth/login" class="nav-btns">Login</a>
+    <a href="/auth/signup" class="nav-btns">Signup</a>
+    <a href="/auth/profile" class="nav-btns">Profile</a>
+    <a href="/auth/movies" class="nav-btns">Movies</a>
+    <a href="/auth/logout" class="nav-btns logout">Logout</a>
 
   </nav>
 
@@ -27,5 +29,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://kit.fontawesome.com/5616772ff0.js" crossorigin="anonymous"></script>
   <script src="/javascripts/script.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>
