@@ -25,7 +25,7 @@ function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   } else {
-    res.redirect('/login')
+    res.redirect('login')
   }
 }
 
@@ -34,7 +34,7 @@ router.get("/movies", ensureAuthenticated, (req, res) => {
   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-07-15&year=2020')
   .then(response =>{
    let movies = response.data.results
-   res.render("auth/movies",{movies},)
+   res.render("auth/movies",{movies})
   })
 })
 
