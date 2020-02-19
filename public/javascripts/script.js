@@ -1,6 +1,3 @@
-const router  = express.Router();
-const axios = require('axios')
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -8,4 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
+
+document.querySelector('#button').onclick = function () {
+  
+    let hiddenId = document.querySelector("#hiddenId").value
+    let hiddenName = document.querySelector("#hiddenName").value
+    let hiddenImage = document.querySelector("#hiddenImage").value
+   
+
+
+
+    let favMovie= {
+      id: hiddenId,
+      title:hiddenName,
+      img:hiddenImage
+    }
+    axios.post('/movies/addMovie', favMovie)
+    .then(()=>console.log(favMovie))
+
+}
+
+
+  
+    
+  
 
