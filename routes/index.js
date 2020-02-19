@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const axios = require('axios')
 const youtubeSearch = require('youtube-search')
+const User = require('../models/User')
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
@@ -21,7 +22,8 @@ router.get('/movie/:id', function (req, res) {
     youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
       if(err) return console.log(err);
       let video = results[0]
-      res.render("youtubetest",video)
+      console.log({video,movie})
+      res.render("movie-detail",{video,movie})
     })
     
   })
@@ -34,26 +36,19 @@ router.get('/movie/:id', function (req, res) {
 
 
 
+
 // router.get('/movies', (req, res, next) => {
 
-//   axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-02-15&year=2020')
-//     .then(response => {
-//       let movies = response.data.results
-//       res.render('movies', { movies })
-//     })
-
-// });
-
-// router.get('/movies', (req,res,next) =>{
-
-//     axios.get('https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&release_date.gte=2020-02-15&year=2020')
-//     .then(response =>{
-//      let movies = response.data.results
-//      res.render('movies',{movies})
-//     })
 
 
-// })
 
+
+router.post("/movies/addMovie", (req, res) => {
+  let movie = req.body.movie.id;
+  console.log(movie)
+  User.findByIdAndUpdate(req.user._id, {$push: {favlist: movie}})
+  .then(()=> res.json({ok:true}))
+  .catch((err)=>res.json(err))
+});
 
 module.exports = router
