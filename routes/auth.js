@@ -113,6 +113,7 @@ router.post("/signup", (req, res, next) => {
 
     newUser.save()
       .then(() => {
+
         res.redirect("/auth/movies");
       })
       .catch(err => {
