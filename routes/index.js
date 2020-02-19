@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const router  = express.Router();
 const axios = require('axios')
 const youtubeSearch = require('youtube-search')
 /* GET home page */
@@ -23,12 +23,7 @@ router.get('/movie/:id', function (req, res) {
       let video = results[0]
       res.render("youtubetest",video)
     })
-    // youtubeSearch(`${movie.title} trailer`, opts, fuction(err, results) {
-    //     //if(err) return console.log(err)
-    // // let video = result[0]
-    // // res.render('youtubetest',video) //metan también movie {video,movie}
-    // });
-    //res.json(response.data);
+    
   })
 
 });
