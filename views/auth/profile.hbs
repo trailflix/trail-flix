@@ -1,15 +1,24 @@
-
 <header>
   <h1>Perfil de {{user.username}}</h1>
 </header>
-<section>
-  
-  {{#each favlist}}
+<section class="favlist-view">
 
-  <input type="hidden" name="id" value="{{id}}">
-  <p>{{title}}</p>
+  {{!-- {{if user.favlist}} --}}
+
+  {{#each user.favlist}}
+
+  <h2>{{title}}</h2>
+
+  {{#if img}}
   <img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster">
-  
+  <button id="delete-fav">Remove film</button>
+  {{/if}}
+
   {{/each}}
+
+  {{!-- {{/if}} --}}
+
+
+
 
 </section>
