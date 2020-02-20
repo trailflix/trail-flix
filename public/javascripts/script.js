@@ -43,13 +43,7 @@ window.onload = function () {
     //axios.post("/movies/unfav/{{id}}").then(() => axios.get("/profile").then((favoritasAqui) => //repintado))
   
 
-
-
-
 }
-
-
-
 
 
 
