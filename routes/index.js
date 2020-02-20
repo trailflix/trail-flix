@@ -17,35 +17,24 @@ router.get('/movie/:id', function (req, res) {
       key: `${process.env.YT_API}`
     };
     let movie = response.data
-
-
-    youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
-      if(err) return console.log(err);
+      /*youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
+     if(err) return console.log(err);
       let video = results[0]
-      console.log({video,movie})
-      res.render("movie-detail",{video,movie})
-    })
+      console.log({video,movie})*/
+      res.render("movie-detail", {/*video,*/ movie})
+    //})
     
   })
 
-});
-
-
-
-
-
-
-
-
-// router.get('/movies', (req, res, next) => {
+})
 
 
 
 
 
 router.post("/movies/addMovie", (req, res) => {
-  let movie = favMovie;
-  console.log(movie)
+  console.log(req.body)
+  let movie = req.body;
   User.findByIdAndUpdate(req.user._id, {$push: {favlist: movie}})
   .then(()=> res.json({ok:true}))
   .catch((err)=>res.json(err))
