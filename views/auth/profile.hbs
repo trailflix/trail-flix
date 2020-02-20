@@ -1,7 +1,21 @@
 <header>
   <h1>Perfil de {{user.username}}</h1>
 </header>
-<section>
-  <p>View <a href="/">index page</a></p>
+<section class="favlist-view">
+
+
+  {{#each user.favlist}}
+  <input type="hidden" name="id" value="{{id}}">
+  <h2>{{title}}</h2>
+  {{#if img}}
+
+  <img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster">
+  <input type="hidden" value="{{id}}" class="movie-id">
+
+  <button class="btn-delete">Remove film</button>
+
+  {{/if}}
+  {{/each}}
+
 
 </section>

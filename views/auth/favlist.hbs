@@ -1,0 +1,16 @@
+<h1>Esta es la lista de tus favoritos</h1>
+
+<div>
+
+  {{#each moviesgenre}}
+
+  <div>
+
+
+  <h2>{{title}}</h2>
+  
+
+  <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli"></a>
+ 
+  {{/each}}
+</div>
