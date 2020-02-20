@@ -3,6 +3,17 @@
 </header>
 <section class="favlist-view">
 
+<<<<<<< HEAD
+  {{#each user.favlist}}
+  <input type="hidden" name="id" value="{{id}}">
+  <h2>{{title}}</h2>
+  {{#if img}}
+  <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster"></a>
+
+  <button id="delete-fav">Remove film</button>
+  {{/if}}
+  {{/each}}
+=======
   {{!-- {{if user.favlist}} --}}
 
   {{#each user.favlist}}
@@ -20,5 +31,6 @@
 
 
 
+>>>>>>> f13ade38d41a48844f9e1bee97733c410d7f1625
 
 </section>

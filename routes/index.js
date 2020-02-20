@@ -17,12 +17,12 @@ router.get('/movie/:id', function (req, res) {
       key: `${process.env.YT_API}`
     };
     let movie = response.data
-      /*youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
-     if(err) return console.log(err);
-      let video = results[0]
-      console.log({video,movie})*/
-      res.render("movie-detail", {/*video,*/ movie})
-    //})
+    //   youtubeSearch(`${movie.title} trailer`, opts, function(err, results) {
+    //  if(err) return console.log(err);
+    //   let video = results[0]
+    //   console.log({video,movie})
+      res.render("movie-detail", {/*video, */movie})
+    
     
   })
 
