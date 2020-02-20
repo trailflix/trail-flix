@@ -41,3 +41,8 @@ router.post("/movies/addMovie", (req, res) => {
 });
 
 module.exports = router
+
+
+/* router.delete("/auth/profile", (req, res) => {
+  console.log('hago algo')
+}) */

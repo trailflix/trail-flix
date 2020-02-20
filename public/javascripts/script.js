@@ -26,6 +26,15 @@ document.querySelector('#button').onclick = function () {
 }
 
 
+document.querySelector('#delete-fav').onclick = function () {
+
+  let hiddenIdFav = document.querySelector('#hiddenIdFav').value;
+  
+
+  axios.delete()
+
+}
+
   
     
   
