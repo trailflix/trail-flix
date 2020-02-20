@@ -29,12 +29,6 @@ router.get('/movie/:id', function (req, res) {
 })
 
 
-// function addFavs(){
-
-//   axios.post(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=c9f84c134bb1d07c82ecf21fbb8de863`)
-//   console.log(req.params.id)
-
-// }
 
 
 
