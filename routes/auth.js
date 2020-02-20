@@ -140,23 +140,5 @@ router.get("/logout", (req, res) => {
 });
 
 
-router.get("/action", ensureAuthenticated, (req, res) => {
-  axios
-    .get(
-      // "https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&release_date.gte=2020-07-15&year=2020"
-
-      "https://api.themoviedb.org/3/discover/movie?api_key=c9f84c134bb1d07c82ecf21fbb8de863&with_genres=28&release_date.gte=2020-07-15&year=2020"
-    )
-    .then(response => {
-      let moviesDrama = response.data.results;
-      res.render("action", { moviesDrama });
-    });
-});
-
-
-
-
-
-
 
 module.exports = router;

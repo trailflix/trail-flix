@@ -25,28 +25,6 @@ document.querySelector('#button').onclick = function () {
 
 }
 
-document.querySelector('#delete-film').onclick = function () {
-  
-  let hiddenprofileId = document.querySelector("#hiddenId").value
-  
-
-  axios.post('/movies/addMovie', {hiddenprofileId})
-  .then(()=>console.log(hiddenprofileId))
-
-}
-
-
-
-
-document.querySelector('#delete-fav').onclick = function () {
-
-  let hiddenIdFav = document.querySelector('#hiddenIdFav').value;
-  
-
-  axios.delete()
-
-}
-
   
     
   
