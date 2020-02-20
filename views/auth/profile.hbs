@@ -3,7 +3,13 @@
   <h1>Perfil de {{user.username}}</h1>
 </header>
 <section>
-  <p>View <a href="/">index page</a></p>
-   <p>View <a href="profile/favlist">Lista de favoritos</a></p>
+  
+  {{#each favlist}}
+
+  <input type="hidden" name="id" value="{{id}}">
+  <p>{{title}}</p>
+  <img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster">
+  
+  {{/each}}
 
 </section>

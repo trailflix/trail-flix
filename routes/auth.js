@@ -23,6 +23,7 @@ router.get("/login", (req, res, next) => {
 });
 
 router.get("/profile", ensureLogin.ensureLoggedIn(), (req, res) => {
+
   res.render("auth/profile", { user: req.user });
 });
 
