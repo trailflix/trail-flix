@@ -45,13 +45,24 @@ router.get('/movie/:id', function (req, res) {
 router.post("/movies/addMovie", (req, res) => {
   console.log(req.body)
   let movie = req.body;
+  
   User.findByIdAndUpdate(req.user._id, {$push: {favlist: movie}})
   .then(()=> res.json({ok:true}))
   .catch((err)=>res.json(err))
+
+  
 });
 
 module.exports = router
 
+router.post('/delete/:id', (req,res) =>{
+  console.log(req.body)
+  User.findByIdAndUpdate(req.user._id, {$pull: {favlist: {id: req.body.id}}})
+  .then(()=>{
+    res.redirect("/auth/profile")
+    .then(err => console.log(err))
+  })
+})
 
 /* router.delete("/auth/profile", (req, res) => {
   console.log('hago algo')

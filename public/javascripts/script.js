@@ -1,31 +1,49 @@
+window.onload = function () {
 
-document.addEventListener('DOMContentLoaded', () => {
+  let addFavBtn = document.querySelector('#button')
+  let deleteFavBtn = document.querySelectorAll('.btn-delete')
 
-  console.log('IronGenerator JS imported successfully!');
-
-}, false);
-
-
-document.querySelector('#button').onclick = function () {
-  
-    let hiddenId = document.querySelector("#hiddenId").value
-    let hiddenName = document.querySelector("#hiddenName").value
-    let hiddenImage = document.querySelector("#hiddenImage").value
-   
-
-
-
-    let favMovie = {
-      id: hiddenId,
-      title:hiddenName,
-      img:hiddenImage
+  if (addFavBtn) {
+    addFavBtn.onclick = function () {
+      let hiddenId = document.querySelector("#hiddenId").value
+      let hiddenName = document.querySelector("#hiddenName").value
+      let hiddenImage = document.querySelector("#hiddenImage").value
+      let favMovie = {
+        id: hiddenId,
+        title: hiddenName,
+        img: hiddenImage
+      }
+      axios.post('/movies/addMovie', favMovie)
+        .then(() => console.log(favMovie))
     }
-    axios.post('/movies/addMovie', favMovie)
-    .then(()=>console.log(favMovie))
+  }
+
+
+  if(deleteFavBtn){
+    deleteFavBtn.forEach(button =>{
+      
+      button.addEventListener('click',function(){
+        let idMovie = document.querySelector('.movie-id').value
+        console.log(idMovie)
+        deleteMovie(idMovie)
+      })
+    })
+  }
+
+
+  function deleteMovie(id){
+    axios.post(`/delete/${id}`,{id})
+    .then(()=>console.log("ok"))
+  }
+
+
+/*   document.querySelector('#deletefav-{{id}}').onclick = function (e) {
+    e.preventDefault()
+    console.log('hola franky guapi') */
+    //axios.post("/movies/unfav/{{id}}").then(() => axios.get("/profile").then((favoritasAqui) => //repintado))
+  
 
 }
 
-  
-    
-  
+
 
