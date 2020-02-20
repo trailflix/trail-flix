@@ -38,6 +38,15 @@ document.querySelector('#delete-film').onclick = function () {
 
 
 
+document.querySelector('#delete-fav').onclick = function () {
+
+  let hiddenIdFav = document.querySelector('#hiddenIdFav').value;
+  
+
+  axios.delete()
+
+}
+
   
     
   

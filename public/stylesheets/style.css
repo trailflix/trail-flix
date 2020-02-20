@@ -1,6 +1,7 @@
 * {
   font-family: 'Lacquer', sans-serif;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  color: #aaaaaa; }
 
 body {
   padding-top: 150px;
@@ -46,19 +47,19 @@ body {
     width: 280px;
     height: 80px;
     border-radius: 10px;
-    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
     transition: 0.3s; }
     #nav-bar img:hover {
-      box-shadow: 4px 0px 46px -4px rgba(0, 0, 0, 0.75); }
+      box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527); }
   #nav-bar .nav-btns {
     text-decoration: none;
     border-radius: 10px;
-    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
     transition: 0.3s;
     padding: 15px 30px;
     background-color: #CBEF43; }
     #nav-bar .nav-btns:hover {
-      box-shadow: 4px 0px 46px -4px rgba(0, 0, 0, 0.75); }
+      box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527); }
     #nav-bar .nav-btns.logout {
       background-color: rgba(102, 121, 33, 0.726); }
 
