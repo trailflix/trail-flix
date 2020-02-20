@@ -3,7 +3,7 @@
 </header>
 <section class="favlist-view">
 
-  {{!-- {{if user.favlist}} --}}
+
 
   {{#each user.favlist}}
 
@@ -11,12 +11,14 @@
 
   {{#if img}}
   <img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster">
-  <button id="delete-fav">Remove film</button>
+  <input type="hidden" value="{{id}}" class="movie-id">
+
+  <button class="btn-delete">Remove film</button>
   {{/if}}
 
   {{/each}}
 
-  {{!-- {{/if}} --}}
+
 
 
 
