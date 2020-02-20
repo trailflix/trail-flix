@@ -15,7 +15,7 @@ document.querySelector('#button').onclick = function () {
 
 
 
-    let favMovie= {
+    let favMovie = {
       id: hiddenId,
       title:hiddenName,
       img:hiddenImage
