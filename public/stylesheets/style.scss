@@ -69,12 +69,12 @@ body {
 		height: 80px;
 
 		border-radius: 10px;
-		box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
 
 		transition: 0.3s;
 
 		&:hover {
-			box-shadow: 4px 0px 46px -4px rgba(0,0,0,0.75);
+			box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527);
 		}
 	}
 
@@ -82,7 +82,7 @@ body {
 		text-decoration: none;
 
 		border-radius: 10px;
-		box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75);
+		box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
 
 		transition: 0.3s;
 		
@@ -90,7 +90,7 @@ body {
 		background-color: #CBEF43;
 
 		&:hover {
-			box-shadow: 4px 0px 46px -4px rgba(0,0,0,0.75);
+			box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527);
 		}
 
 		&.logout {
