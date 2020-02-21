@@ -1,21 +1,26 @@
 
 
- <h1>{{video.title}}</h1>
+ 
 
-<div>
-  <iframe width="560" height="315" src="https://youtube.com/embed/{{video.id}}" frameborder="0"></iframe> 
-<h1>{{movie.title}}</h1>
-<p>Release: {{movie.release_date}}</p>
-<p>Rating: {{movie.vote_average}}</p>
-<p>Overview: <br>{{movie.overview}}</p>
+<div class="movie-container">
+  
+  <div class="trailer-div">
+    <h2>{{video.title}}</h2>
+    <iframe width="560" height="315" src="https://youtube.com/embed/{{video.id}}" frameborder="0"></iframe> 
+  </div>
 
 
+  <div class="movie-det">
+    <h1>{{movie.title}}</h1>
+    <p>Release: {{movie.release_date}}</p>
+    <p>Rating: {{movie.vote_average}}</p>
+    <p>Overview: <br>{{movie.overview}}</p>
+    <button id="button">Add to favs</button>
+  </div>
 
-<button id="button">Add to favs</button>
-
-<input type="hidden" id="hiddenId" value="{{movie.id}}">
-<input type="hidden" id="hiddenName" value="{{movie.title}}">
-<input type="hidden" id="hiddenImage" value="{{movie.poster_path}}">
+  <input type="hidden" id="hiddenId" value="{{movie.id}}">
+  <input type="hidden" id="hiddenName" value="{{movie.title}}">
+  <input type="hidden" id="hiddenImage" value="{{movie.poster_path}}">
 
 
 </div>
