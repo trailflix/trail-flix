@@ -1,11 +1,12 @@
-// dark-puce (oscuro): #433A3F
-// deep space sparkle (azul oscuro): #3D5A6C
-// maximum green yellow (pistacho): #CBEF43
+// thanks to Matt Smith for the neon effect idea. https://codepen.io/AllThingsSmitty/pen/VzXrgY
 
 * {
 	font-family: 'Lacquer', sans-serif;
 	font-family: 'Roboto', sans-serif;
-	color: rgb(170, 170, 170);
+	color: white;
+	font-weight: bolder;
+
+
 }
 
 body {
@@ -22,25 +23,115 @@ body {
 	background-size: cover;
 }
 
+//////////////// LOGIN SIGNUP //////////////////////
 
 .form-container{
 	width:450px;
-	padding:30px;
-	margin:40px auto;
-	background: #FFF;
+	padding:55px;
+	margin: 10px 450px;
+	background: rgba(255, 255, 255, 0.404);
 	border-radius: 10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius: 10px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& input {
+		padding: 5px 60px;
+		border-radius: 10px;
+		border:none;
+
+		outline: none;
+
+		& :focus {
+
+			border: 1px solid ;
+			border-color: #DF181B;
+		}
+
+		
+
+		
+	}
+
 }
-.form-container .inner-wrap{
-	padding: 30px;
-	background: #F8F8F8;
-	border-radius: 6px;
-	margin-bottom: 15px;
+
+//////////////////////// OTHER BUTTONS ////////////////////////////////
+
+
+.btn-class {
+
+	background-color: #DF181B;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 5px;
+
+	outline: none;
+	cursor: pointer;
+	transition: 0.4s;
+
+	&:hover {
+
+		background-color: rgb(228, 79, 81);
+		font-size: larger;
+	}
 }
+
+#button {
+	background-color: #DF181B;
+	border: none;
+	padding: 10px 30px;
+	
+	border-radius: 5px;
+
+	outline: none;
+	cursor: pointer;
+	transition: 0.4s;
+
+	&:hover {
+
+		background-color: rgb(228, 79, 81);
+		font-size: larger;
+	}
+}
+
+.btn-delete {
+	background-color: #DF181B;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 5px;
+
+	transition: 0.4s;
+	cursor: pointer;
+	outline: none;
+
+	&:hover {
+
+		background-color: rgb(228, 79, 81);
+		font-size: larger;
+	}
+}
+
+
+
+//////////////////// INDEX VIEW //////////////////////////////////
+
+.index-view {
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 215px;
+
+	line-height: 15px;
+	
+
+
+
+}
+
+///////////////////// LAYOUT ////////////////////////////////////////
 
 #nav-bar {
 	display: flex;
@@ -49,20 +140,23 @@ body {
 
 	position: fixed;
 	width: 100vw;
-	height: 8rem;
+	height: 6.5rem;
 	top: 0;
   left: 0;
 
-	background-color: rgba(202, 239, 67, 0.096);
+	background-color: rgba(29, 9, 9, 0.096);
 	box-shadow: 4px 0px 46px -9px rgba(255, 255, 255, 0.527);
 
 	font-size: 20px;
 
+	#lay-logo {
+		padding: 8px 30px;
+	}
 	
-	
+
 	a {
-		color: #983628;
-		font-weight: bold;
+		color: white;
+		font-weight: bolder;
 	}
 
 	& img {
@@ -72,38 +166,66 @@ body {
 		height: 80px;
 
 		border-radius: 10px;
-		box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
+		// box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
 
 		transition: 0.3s;
 
 		&:hover {
-			box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527);
+			// box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527);
+			cursor: pointer;
 		}
 	}
 
 	& .nav-btns {
 		text-decoration: none;
 
-		border-radius: 10px;
-		box-shadow: 10px 10px 0px 0px rgba(255, 255, 255, 0.527);
 
-		transition: 0.3s;
+
+		transition: 0.4s;
 		
-		padding: 15px 30px;
-		background-color: #CBEF43;
+		padding: 5px 15px;
+		background-color: none;
+		& p {
 
-		&:hover {
-			box-shadow: 4px 0px 46px -4px rgba(255, 255, 255, 0.527);
+			transition: 0.4s;
+
+			&:hover {
+				
+				font-size: 25px;
+
+				transition: 0.4s;
+				color: #fff;
+				text-shadow:
+					0 0 10px rgb(219, 57, 60),
+					0 0 15px #DF181B,
+					0 0 25px #DF181B,
+					0 0 45px rgba(223, 24, 27, 0.877),
+					0 0 85px rgba(223, 24, 27, 0.733),
+					0 0 95px rgba(223, 24, 27, 0.568),
+					0 0 105px rgba(223, 24, 27, 0.356),
+					0 0 155px rgba(223, 24, 27, 0.178);
+
+					
+				
+			}
 		}
 
+
 		&.logout {
-			background-color: rgba(102, 121, 33, 0.726);
+			color: rgba(165, 162, 162, 0.849);
 		}
 	}
 	
 }
 
 
+
+////////////////////////////////////// MOVIES /////////////////////////////////////////
+
+
+#movies-bg {
+
+}
 
 #movies {
 
@@ -114,7 +236,9 @@ body {
 
 	
 	& h2 {
-		color: #CBEF43;
+
+		text-transform: uppercase;
+		color: white;
 		display: block;
 		min-height: 50px;
 		text-align: center;
@@ -127,9 +251,21 @@ body {
 		border-radius: 5px;
 		justify-self: center;
 		
-	
+		
 
-		transition: 0.3s;
+		transition: 0.4s;
+
+		&:hover {
+			box-shadow:
+			0 0 10px rgb(219, 57, 60),
+			0 0 15px #DF181B,
+			0 0 25px #DF181B,
+			0 0 45px rgba(223, 24, 27, 0.877),
+			0 0 85px rgba(223, 24, 27, 0.733),
+			0 0 95px rgba(223, 24, 27, 0.568),
+			0 0 105px rgba(223, 24, 27, 0.356),
+			0 0 155px rgba(223, 24, 27, 0.178);
+		}
 	}
 
 	& div {
@@ -139,17 +275,156 @@ body {
 		margin-bottom: 40px;
 
 		border-radius: 5px;
-		box-shadow: 1px 0px 17px -10px rgba(255, 255, 255, 0.527);
+		// box-shadow: 1px 0px 17px -10px rgba(255, 255, 255, 0.527);
 
 		
 
 
-		transition: 0.3s;
+		// transition: 0.3s;
 
-		&:hover {
+/* 		&:hover {
 			box-shadow: 1px 0px 20px -5px rgba(255, 255, 255, 0.527);
 		
+		} */
+	}
+	
+}
+
+.each-movie {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+//////////////////////////////////// CATEGORIES ////////////////////////////////////////////
+
+.films-categories {
+
+	display: flex;
+	align-items: center;
+	flex-direction:column;
+	justify-content: space-evenly;
+
+	& div {
+		text-align: center;
+		margin-bottom: 20px;
+
+	}
+
+	#hor {
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+
+		& div a img {
+
+			height: 400px;
+			width: 500px;
+	
+			border-radius: 5px;
+			justify-self: center;
+
+			transition: 0.4s;
+			&:hover {
+				box-shadow:
+				0 0 10px rgb(219, 57, 60),
+				0 0 15px #DF181B,
+				0 0 25px #DF181B,
+				0 0 45px rgba(223, 24, 27, 0.877),
+				0 0 85px rgba(223, 24, 27, 0.733),
+				0 0 95px rgba(223, 24, 27, 0.568),
+				0 0 105px rgba(223, 24, 27, 0.356),
+				0 0 155px rgba(223, 24, 27, 0.178);
+			}
+
+
+		}
+
+
+	}
+
+
+	#vert {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+		& div a img {
+			height: 450px;
+			width: 300px;
+
+			border-radius: 5px;
+			justify-self: center;
+
+			transition: 0.4s;
+
+			&:hover {
+				box-shadow:
+				0 0 10px rgb(219, 57, 60),
+				0 0 15px #DF181B,
+				0 0 25px #DF181B,
+				0 0 45px rgba(223, 24, 27, 0.877),
+				0 0 85px rgba(223, 24, 27, 0.733),
+				0 0 95px rgba(223, 24, 27, 0.568),
+				0 0 105px rgba(223, 24, 27, 0.356),
+				0 0 155px rgba(223, 24, 27, 0.178);
+			}
+
 		}
 	}
 	
+}
+
+/////////////////////////// MOVIES & CATEGORIES BG /////////////////////////
+
+.div-bg {
+
+	& h1 {
+		text-align: center;
+	}
+
+}
+
+/////////// MOVIE-DETAILS ////////////////////////////
+
+.movie-container {
+
+	display: flex;
+	justify-content: space-evenly;
+	
+
+	& .movie-det {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+	}
+}
+
+//////////////////////////// PROFILE /////////////////////////////////////
+
+
+.favlist-view {
+	display: flex;
+	flex-wrap: wrap;
+
+	& div {
+		width: 24%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& img {
+			margin-bottom: 15px;
+		}
+
+		& button {
+			width: 85%;
+		}
+		
+	}
 }
