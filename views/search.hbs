@@ -1,0 +1,23 @@
+<form name="fetch-movie-title" id="fetch" action="/search" method="POST">
+     <input type="text" name="query" placeholder="Enter a movie title" id="title" />
+     <input type="submit" id="search" value="Find me a poster" />
+</form>
+
+ <div id="movies">
+
+  {{#each movies}}
+  {{#if poster_path}}
+  <div>
+    <h2>{{title}}</h2>
+    <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{poster_path}} alt="img_peli"></a>
+  </div>
+  {{/if}}
+  {{/each}}
+</div> 
+
+
+<script type="text/javascript">
+
+
+
+</script>
