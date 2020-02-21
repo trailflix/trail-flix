@@ -62,7 +62,7 @@ router.get('/movie/:id', function (req, res) {
      //   console.log(jsondata);
       });
   });
-})
+
 
 
 router.post("/movies/addMovie", (req, res) => {
