@@ -1,14 +1,15 @@
 
-<h2>Login</h2>
 
 <div>
+
+
   <form action="/auth/login" method="POST" class="form-container">
-    <label for="username">Username</label>
+    <label for="username">Username</label> <br>
     <input id="username" type="text" name="username" placeholder="JonSnow">
 
     <br><br>
 
-    <label for="password">Password</label>
+    <label for="password">Password</label> <br>
     <input id="password" type="password" name="password" placeholder="Your password">
     <br>
     {{#if message }}
@@ -17,7 +18,7 @@
 
     <br><br>
 
-    <button>Login</button>
+    <button class="btn-class">Login</button>
 
     <p class="account-message">
       Don't have an account yet?
