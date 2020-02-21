@@ -8,7 +8,7 @@
       <h2>{{title}}</h2>
       {{#if img}}
 
-      <img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster">
+      <a href="/movie/{{id}}"><img src=http://image.tmdb.org/t/p/w300/{{img}} alt="poster"></a>
       <input type="hidden" value="{{id}}" class="movie-id">
 
       <button class="btn-delete">Remove film</button>

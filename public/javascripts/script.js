@@ -29,6 +29,11 @@ window.onload = function() {
   }
 
 
+  function deleteMovie(id){
+    axios.post(`/delete/${id}`,{id})
+    .then(()=>console.log("ok"))
+  }
+
 
 
 }

@@ -26,6 +26,7 @@ body {
     padding: 5px 60px;
     border-radius: 10px;
     border: none;
+    color: black;
     outline: none; }
     .form-container input :focus {
       border: 1px solid;
@@ -205,5 +206,26 @@ body {
       margin-bottom: 15px; }
     .favlist-view div button {
       width: 85%; }
+
+#search {
+  background-color: #DF181B;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s; }
+  #search:hover {
+    background-color: #e44f51;
+    font-size: larger; }
+
+#title {
+  padding: 10px 80px;
+  border-radius: 10px;
+  border: none;
+  outline: none; }
+  #title :focus {
+    border: 1px solid;
+    border-color: #DF181B; }
 
 /*# sourceMappingURL=style.css.map */
